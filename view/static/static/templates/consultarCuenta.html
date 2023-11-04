@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div >
+
+        <form  action="GUIVista" method="post">
+
+            <h1 class=h1>Consultar Cuenta Corriente</h1>
+            <h1 class="text-center">Cuenta Corriente</h1>
+
+            <font size="5">
+                <div class=div>
+                    <!-- Número de Cuenta Corriente -->
+                    <label>Número del Cuenta Corriente: </label> <input class=input id="numeroCuenta"
+                        name="numeroCuenta" type="number" autofocus
+                        placeholder="Ingrese el número de la cuenta">
+                </div>
+
+        <div align="center">
+	<input name ="opcion" class=input type="submit" class=btn1 type="button"value="Consultar Cuenta ">
+						
+       <p> Número de Cuenta:${numeroCuenta}</p>
+       <p> Saldo:${saldoCredito}</p>
+       <p> Fecha de Apertura:${fechaApertura}</p>  
+       <p> Tasa de Interes:${tasaInteres}</p>  
+								
+       </div>
+</body>
