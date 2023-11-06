@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deshabilitar Usuario</title>
+    <link rel="stylesheet" href="static/css/style.css"><!-- une  -->
+</head>
+<body>
+    <header>
+        <div class="header__superior">
+            <div class="logo">
+                <img src="static/imagenes/boyacense.png" alt="">
+            </div>
+        </div>
+        <div class="container__menu">
+            <!-- los # van los link de los botones -->
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+    
+                        <li><a href="#">Cuentas</a>
+                            <ul>
+                                <li><a href="crearCDT.html">Cuentas CDT</a></li>
+                                <li><a href="crearCredito.html">Cuentas de Crédito</a></li>
+                                <li><a href="crearCuenta.html">Cuenta Corriente</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Sucursales</a>
+                            <ul>
+                                <li><a href="crearSucursal.html">Crear Sucursal</a></li>
+                                <li><a href="actualizarSucursal.html">Actualizar Sucursal</a></li>
+                                <li><a href="deshabilitarSucuarsal.html">Deshabilitar Sucursal</a></li>
+                            </ul>
+                        </li>
+    
+                        <li><a href="#">Información</a>
+                            <ul>
+                                <li><a href="informacionBancaria.html">Información Bancaria</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contactanos</a>
+                        </li>
+                        <li><a href="login.html">Ingresar</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+<!--MENU-->
+<header>
+    <div class="header__superior">
+        <div class="logo">
+            <img src="static/imagenes/Principal1.png" alt="">
+        </div>
+    </div>
+    
+</body>
+<!-- LOGICA -->
+
+<div class="formulario">
+    <h1>¿Qué usuario deseas deshabilitar?</h1>
+    <form method="post">
+
+        <label for="cedula">Cédula del Usuario</label>
+        <select name="cedula" id="cedula" class="Username">
+            {% for cedula in usuario %}
+            <option value="{{ loop.index }}">{{ cedula }}</option>
+            {% endfor %}
+        </select>
+
+
+        <input class="submit" type="submit" value="Deshabilitar">
+    </form>
+</div>
+<div class="header-content container">
+    <img src="static/imagenes/Boyacense.jpg" alt="">
+</div>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div >
+
+        <form  action="GUIVista" method="post">
+
+            <h1 class=h1>Consultar CDT</h1>
+            <h1 class="text-center">CDT</h1>
+
+            <font size="5">
+                <div class=div>
+                    <!-- Número de CDT -->
+                    <label>Número del CDT: </label> <input class=input id="numeroCdt"
+                        name="numeroCdt" type="number" autofocus
+                        placeholder="Ingrese el número de CDT">
+                </div>
+
+        <div align="center">
+	<input name ="opcion" class=input type="submit" class=btn1 type="button"value="Consultar CDT">
+						
+       <p> Número de CDT:${numeroCdt}</p>
+       <p> Saldo:${saldoCredito}</p>
+       <p> Fecha de Apertura:${fechaApertura}</p>  
+       <p> Tasa de Interes:${tasaInteres}</p>  
+       <p>Cláusula:${clausula}</p>
+       <p>Retención:${retencion}</p>
+       <p>Fecha de Finalización: ${fechaFinalizacion}</p>
+       <p>Interes Aproximado: ${interesAprox}</p>
+								
+       </div>
+</body>

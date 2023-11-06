@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucursal</title>
+    <link rel="stylesheet" href="static/css/style.css"><!-- une  -->
+</head>
+<body>
+
+    <header>
+        <div class="header__superior">
+            <div class="logo">
+                <img src="static/imagenes/boyacense.png" alt="">
+            </div>
+        </div>
+        <div class="container__menu">
+            <!-- los # van los link de los botones -->
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+    
+                        <li><a href="#">Cuentas</a>
+                            <ul>
+                                <li><a href="crearCDT.html">Cuentas CDT</a></li>
+                                <li><a href="crearCredito.html">Cuentas de Crédito</a></li>
+                                <li><a href="crearCuenta.html">Cuenta Corriente</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Sucursales</a>
+                            <ul>
+                                <li><a href="crearSucursal.html">Crear Sucursal</a></li>
+                                <li><a href="actualizarSucursal.html">Actualizar Sucursal</a></li>
+                                <li><a href="deshabilitarSucuarsal.html">Deshabilitar Sucursal</a></li>
+                            </ul>
+                        </li>
+    
+                        <li><a href="#">Información</a>
+                            <ul>
+                                <li><a href="informacionBancaria.html">Información Bancaria</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contactanos</a>
+                        </li>
+                        <li><a href="login.html">Ingresar</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <header class="tm-header" id="tm-header">
+
+        <div class="tm-header-wrapper">
+
+            <div class="tm-site-header">
+                <div class="tm-site-logo"></div>
+                <h1 class="text-center">Sucursales del Banco Boyacense</h1>
+            </div>
+        </div>
+    </header>
+
+        <h1 class=h1>Registro Sucursal</h1>
+
+
+                    <div class=div>
+                    <!-- Identificador -->
+                        <label>Número de Sucursal: </label> <input class=input id="idSucursal"
+                        name="idSucursal" type="number" autofocus
+                        placeholder="Ingrese el identificador">
+                    </div>
+                    <p></p>
+                     <!-- Nombre-->
+                    <div class=div>
+                        <label>Nombre de la Sucursal: </label> <input class=input id="nombreSucursal"
+                            name="nombreSucursal" type="text" autofocus
+                            placeholder="Ingrese el nombre">
+                    </div> 
+                    <p></p>
+                     <!-- Dirección-->
+                     <div class=div>
+                        <label>Dirección: </label> <input class=input id="direccion"
+                            name="direccion" type="text" autofocus
+                            placeholder="Ingrese la dirección">
+                    </div> 
+                    <p></p>
+                     <!-- Telefóno-->
+                     <div class=div>
+                        <label>Telefóno: </label> <input class=input id="telefono"
+                            name="telefono" type="number" autofocus
+                            placeholder="Ingrese el telefono">
+                    </div>
+                     <input class="submit" type="submit" value="Crear">
+
+</body>                    

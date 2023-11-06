@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Boyacense</title>
+    <link rel="stylesheet" href="static/css/style.css"><!-- Enlaza tu hoja de estilos -->
+    
+</head>
+<style>
+    /* Estilos CSS para las columnas */
+    .column {
+        width: 25%; /* Ancho mayor para las columnas */
+        display: inline-block; /* Para que estén en línea horizontalmente */
+        margin: 10px; /* Márgenes entre las columnas */
+        border: 1px solid #ccc; /* Borde para separar las columnas */
+        padding: 20px; /* Espacio interno para el contenido */
+    }
+</style>
+<body>
+    <header>
+        <div class="header__superior">
+            <div class="logo">
+                <img src="static/imagenes/boyacense.png" alt="">
+            </div>
+        </div>
+        <div class="container__menu">
+            <!-- los # van los link de los botones -->
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+    
+                        <li><a href="#">Cuentas</a>
+                            <ul>
+                                <li><a href="crearCDT.html">Cuentas CDT</a></li>
+                                <li><a href="crearCredito.html">Cuentas de Crédito</a></li>
+                                <li><a href="crearCuenta.html">Cuenta Corriente</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Sucursales</a>
+                            <ul>
+                                <li><a href="crearSucursal.html">Crear Sucursal</a></li>
+                                <li><a href="actualizarSucursal.html">Actualizar Sucursal</a></li>
+                                <li><a href="deshabilitarSucuarsal.html">Deshabilitar Sucursal</a></li>
+                            </ul>
+                        </li>
+    
+                        <li><a href="#">Información</a>
+                            <ul>
+                                <li><a href="informacionBancaria.html">Información Bancaria</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contactanos</a>
+                        </li>
+                        <li><a href="login.html">Ingresar</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <h1 class="h1">Información Bancaria</h1>
+
+    <!-- Columna 1: Información CDT -->
+    <div class="column">
+        <h2>Información CDT</h2>
+        <p>Es una forma de inversión en la que los inversores depositan
+            una cantidad específica de dinero en una cuenta durante un
+            período de tiempo predeterminado, que generalmente varía desde
+           unos pocos meses hasta varios años. A cambio de mantener el 
+           dinero en el CDT durante ese período, el banco o la institución 
+           financiera paga intereses al titular del CDT.</p>
+    </div>
+
+    <!-- Columna 2: Información Crédito -->
+    <div class="column">
+        <h2>Información Crédito</h2>
+        <p> Un crédito es una transacción financiera en la cual una 
+            entidad financiera o prestamista proporciona dinero, bienes o 
+            servicios a una persona o entidad, conocida como el prestatario o 
+            deudor, con la promesa de que este último devolverá la cantidad 
+            prestada en el futuro, generalmente con intereses adicionales.</p>
+    </div>
+
+    <!-- Columna 3: Información Cuenta -->
+    <div class="column">
+        <h2>Información Cuenta</h2>
+        <p> Una cuenta corriente, también conocida como 
+            cuenta de cheques o cuenta bancaria corriente, es un tipo de cuenta 
+            bancaria que permite a una persona o empresa realizar una variedad
+             de transacciones financieras, como depósitos, retiros, transferencias
+             de fondos y pagos. Estas cuentas son ofrecidas por bancos y otras
+             instituciones financieras y son una herramienta fundamental para gestionar
+             las finanzas personales o empresariales.</p>
+    </div>
+</body>
+</html>
+
