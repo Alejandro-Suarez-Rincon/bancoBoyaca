@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>  
+    <style>
+    
         * {
             margin: 0;
             padding: 0;
@@ -399,35 +400,8 @@
         body{
             background-image: url('static/imagenes/Principal1.png');
             background-repeat: no repeat;}
-               /* Estilo para centrar el formulario */
-                .form-center {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    height: 100vh; /* Centra verticalmente en la ventana */
-                }
         
-                /* Estilo para los elementos del formulario */
-                .div {
-                    margin: 10px 0;
-                    text-align: right;
-                }
-        
-                .input {
-                    width: 100%;
-                    padding: 5px;
-                }
     </style>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banco Boyacense</title>
-    <link rel="stylesheet" href="static/css/style.css"><!-- Enlaza tu hoja de estilos -->
-    
-</head>
-
 <body>
     <header>
         <div class="header__superior">
@@ -477,44 +451,48 @@
             </div>
         </div>
     </header>   
-    <div class="form-center">
-        <form>
-    <h1 class="h1">Información Bancaria</h1>
-
-    <!-- Columna 1: Información CDT -->
-    <div class="column">
-        <h2>Información CDT</h2>
-        <p>Es una forma de inversión en la que los inversores depositan
-            una cantidad específica de dinero en una cuenta durante un
-            período de tiempo predeterminado, que generalmente varía desde
-           unos pocos meses hasta varios años. A cambio de mantener el 
-           dinero en el CDT durante ese período, el banco o la institución 
-           financiera paga intereses al titular del CDT.</p>
-    </div>
-
-    <!-- Columna 2: Información Crédito -->
-    <div class="column">
-        <h2>Información Crédito</h2>
-        <p> Un crédito es una transacción financiera en la cual una 
-            entidad financiera o prestamista proporciona dinero, bienes o 
-            servicios a una persona o entidad, conocida como el prestatario o 
-            deudor, con la promesa de que este último devolverá la cantidad 
-            prestada en el futuro, generalmente con intereses adicionales.</p>
-    </div>
-
-    <!-- Columna 3: Información Cuenta -->
-    <div class="column">
-        <h2>Información Cuenta</h2>
-        <p> Una cuenta corriente, también conocida como 
-            cuenta de cheques o cuenta bancaria corriente, es un tipo de cuenta 
-            bancaria que permite a una persona o empresa realizar una variedad
-             de transacciones financieras, como depósitos, retiros, transferencias
-             de fondos y pagos. Estas cuentas son ofrecidas por bancos y otras
-             instituciones financieras y son una herramienta fundamental para gestionar
-             las finanzas personales o empresariales.</p>
-    </div>
-        </form>
-    </div>
+    
 </body>
-</html>
+<div class="formulario">
+    <h1>Consultar Cuenta</h1>
+    <form method="post">
+        <div class="Username">
+            <p>Número de cuenta: {{ n }} </p>
+        </div>
+        <div class="Username">
+            <p>Número de Sucursal: {{ idSucursal }} </p>
+        </div>
+        <div class="Username">
+            <p>Saldo: {{ saldoCdt }} </p>
+        </div>
+        <div class="Username">
+            <p>Fecha de Apertura: {{ fechaApertura }} </p>
+        </div>
+        <div class="Username">
+            <p>Tasa de interes: {{ tasaInteres }} </p>
+        </div>
+        <div class="Username">
+            <p>Último Movimiento: {{ ultimoMovimeinto }} </p>
+        </div>
+        <div class="Username">
+            <p>Usuario: {{ cedula }} </p>
+        </div>
+        <div class="Username">
+            <p>Cláusula: {{ clausula }} </p>
+        </div>
+        <div class="Username">
+            <p>Retención: {{ retencion }} </p>
+        </div>
+        <div class="Username">
+            <p>Fecha de Finalización: {{ fechaFinalizacion }} </p>
+        </div>
+        <div class="Username">
+            <p>Interes Aproximado: {{ interesAprox }} </p>
+        </div>
 
+        <a href="index.html"> <input  type="button" value="Aceptar"></a>
+
+    </form>
+</div>
+
+</html>

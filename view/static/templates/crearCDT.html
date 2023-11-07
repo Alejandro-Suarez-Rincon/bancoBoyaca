@@ -399,7 +399,25 @@ input[type="submit"].submit {
 body{
     background-image: url('static/imagenes/Principal1.png');
     background-repeat: no repeat;}
+       /* Estilo para centrar el formulario */
+        .form-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Centra verticalmente en la ventana */
+        }
 
+        /* Estilo para los elementos del formulario */
+        .div {
+            margin: 10px 0;
+            text-align: right;
+        }
+
+        .input {
+            width: 100%;
+            padding: 5px;
+        }
 </style>
 <body>
     <header>
@@ -420,6 +438,11 @@ body{
                                 <li><a href="crearCDT.html">Cuentas CDT</a></li>
                                 <li><a href="crearCredito.html">Cuentas de Crédito</a></li>
                                 <li><a href="crearCuenta.html">Cuenta Corriente</a></li>
+                                <li><a href ="consultarCDT.html">Consultar CDT</a></li>
+                                <li><a href ="consultarCredito.html">Consultar Crédito</a></li>
+                                <li><a href ="consultarCuenta.html">Consultar Cuenta</a></li>
+                                <li><a href ="consultarHistorial.html">Consultar Historial</a></li>
+
                             </ul>
                         </li>
 
@@ -436,7 +459,7 @@ body{
                                 <li><a href="informacionBancaria.html">Información Bancaria</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Contactanos</a>
+                        <li><a href="contactanos.html">Contactanos</a>
                         </li>
                         <li><a href="login.html">Ingresar</a>
                         </li>
@@ -444,86 +467,78 @@ body{
                 </nav>
             </div>
         </div>
-    </header>
-    <h1 class="text-center">CDT</h1>
-
-    <h1 class=h1>Crear CDT</h1>
-
-    <!-- Nùmero de CDT -->
-    <div class=div>
-            <label>Número de CDT: </label> <input class=input id="numeroCdt"
-            name="numeroCdt" type="number" autofocus
-            placeholder="">
+    </header>   
     </div>
 
-    <!-- Identificador -->
-    <div class=div>
-            <label>Número de Sucursal: </label> <input class=input id="idSucursal"
-            name="idSucursal" type="number" autofocus
-            placeholder="Ingrese la Sucursal">
-    </div>
+    <div class="form-center">
+        <form>
+            <!-- Número de CDT -->
+            <div class="div">
+                <label>Número de CDT: </label>
+                <input class="input" id="numeroCdt" name="numeroCdt" type="number" autofocus placeholder="">
+            </div>
 
-    <!-- Saldo -->
-    <div class=div>
-            <label>Saldo: </label> <input class=input id="saldoCdt"
-            name="saldoCdt" type="number" autofocus
-            placeholder="Ingrese el valor del saldo">
-    </div>
+            <!-- Identificador -->
+            <div class="div">
+                <label>Número de Sucursal: </label>
+                <input class="input" id="idSucursal" name="idSucursal" type="number" autofocus placeholder="Ingrese la Sucursal">
+            </div>
 
-     <!-- Fecha Apertura -->
-    <div class=div>
-       <label>Fecha de Apertura: </label> <input class=input id="fechaApertura"
-       name="fechaApertura" type="date" autofocus
-       placeholder="dd/mm/aa">
-   </div> 
+            <!-- Saldo -->
+            <div class="div">
+                <label>Saldo: </label>
+                <input class="input" id="saldoCdt" name="saldoCdt" type="number" autofocus placeholder="Ingrese el valor del saldo">
+            </div>
 
-    <!-- Tasa de interes -->
-   <div class=div>
-        <label>Tasa de interes: </label> <input class=input id="tasaInteres"
-        name="tasaInteres" type="number" autofocus
-        placeholder="Ingrese la tasa de interes">
-    </div>
+            <!-- Fecha Apertura -->
+            <div class="div">
+                <label>Fecha de Apertura: </label>
+                <input class="input" id="fechaApertura" name="fechaApertura" type="date" autofocus placeholder="dd/mm/aa">
+            </div>
 
-     <!-- Ultimo movimiento -->
-     <div class="div">
-        <label>Ultimo movimiento:</label><input class=input id="ultimoMovimeinto"
-        name="ultimoMovimeinto" type="text" autofocus
-        placeholder="Ingrese el movimiento">
-     </div>
-     <!-- Usuario -->
-     <div class="div">
-        <label>Usuario:</label><input class=input id="cedula"
-        name="cedula" type="number" autofocus
-        placeholder="Ingrese la cédula">
-     </div>
-    <div class=div>
-        <!-- Clausula -->
-            <label>Cláusula: </label> <input class=input id="clausula"
-            name="clausula" type="number" autofocus
-            placeholder="Ingrese la clausula">
-    </div>
+            <!-- Tasa de interés -->
+            <div class="div">
+                <label>Tasa de interés: </label>
+                <input class="input" id="tasaInteres" name="tasaInteres" type="number" autofocus placeholder="Ingrese la tasa de interés">
+            </div>
 
-    <div class=div>
-        <!-- Retención -->
-            <label>Retención: </label> <input class=input id="retencion"
-            name="retencion" type="number" autofocus
-            placeholder="Ingrese la retención">
-    </div>
+            <!-- Ultimo movimiento -->
+            <div class="div">
+                <label>Último movimiento:</label>
+                <input class="input" id="ultimoMovimeinto" name="ultimoMovimeinto" type="text" autofocus placeholder="Ingrese el movimiento">
+            </div>
 
-    <div class=div>
-        <!-- Fecha Finalización -->
-       <label>Fecha de Finalización: </label> <input class=input id="fechaFinalizacion"
-       name="fechaFinalizacion" type="date" autofocus
-       placeholder="dd/mm/aa">
-   </div> 
+            <!-- Usuario -->
+            <div class="div">
+                <label>Usuario:</label>
+                <input class="input" id="cedula" name="cedula" type="number" autofocus placeholder="Ingrese la cédula">
+            </div>
 
-   <div class=div>
-    <!-- Interes Aproximado -->
-        <label>Interes Aproximado: </label> <input class=input id="interesAprox"
-        name="interesAprox" type="number" autofocus
-        placeholder="Ingrese el interes aproximado">
-    </div>
+            <!-- Cláusula -->
+            <div class="div">
+                <label>Cláusula: </label>
+                <input class="input" id="clausula" name="clausula" type="number" autofocus placeholder="Ingrese la cláusula">
+            </div>
 
-    <input class="submit" type="submit" value="Crear CDT">
-        
+            <!-- Retención -->
+            <div class="div">
+                <label>Retención: </label>
+                <input class="input" id="retencion" name="retencion" type="number" autofocus placeholder="Ingrese la retención">
+            </div>
+
+            <!-- Fecha Finalización -->
+            <div class="div">
+                <label>Fecha de Finalización: </label>
+                <input class="input" id="fechaFinalizacion" name="fechaFinalizacion" type="date" autofocus placeholder="dd/mm/aa">
+            </div>
+
+            <!-- Interés Aproximado -->
+            <div class="div">
+                <label>Interés Aproximado: </label>
+                <input class="input" id="interesAprox" name="interesAprox" type="number" autofocus placeholder="Ingrese el interés aproximado">
+            </div>
+            <a href="emergenteCrearCDT.html"><input class="submit" type="submit" value="Crear CDT">
+        </form>
+    </div>   
+    
 </body>
