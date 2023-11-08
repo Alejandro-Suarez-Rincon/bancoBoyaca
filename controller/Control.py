@@ -5,10 +5,10 @@ from fastapi import FastAPI, APIRouter, Request
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import RedirectResponse
 
+from model.CDTDTO import CDTDTO
 from model.UsuarioDTO import UsuarioDTO
 from view.index import (principalView, loginView, indexView, register_User, update_User, disable_User,
-                        emergenteRegisterUser,
-                        register_Sucursal,
+                        emergenteRegisterUser, register_Sucursal, consultarCDT, consultarCDT2,
                         update_Sucursal, disable_Sucursal, register_CDT, emergenteRegisterCDT, register_Credito,
                         emergenteRegisterCredito, register_Corriente, emergenteRegisterCorriente, consult_Historial)
 
@@ -77,12 +77,33 @@ class Control:
 
         return register_User(request, municipioEnviar)
 
+    ## CUENTAS
+    async def consultarCDT(self, request:Request):
+        if (request.method == "POST"):
+            form_data = await request.form()
+            numeroCuenta = form_data.get("numeroCuenta")
+
+            cdt = CDTDTO(None, None, None, None, numeroCuenta, None,
+                         None, None, None, None, None)
+
+            consulta = cdt.consultarCDT()
+            if(consulta):
+                return RedirectResponse("/consultarCDT2", status_code=303)
+            else:
+                return consultarCDT(request)
+
+        return consultarCDT(request)
+
+    def consultarCDT2(self, request:Request):
+        return consultarCDT2(request)
 
     def routers(self):
         self.router.add_api_route("/", self.principal)
         self.router.add_api_route("/login", self.login, methods=["GET", "POST"])
         self.router.add_api_route("/index", self.index)
         self.router.add_api_route("/registro", self.registrarUsuario, methods=["GET", "POST"])
+        self.router.add_api_route("/consultarCDT", self.consultarCDT, methods=["GET"])
+        self.router.add_api_route("/consultarCDT2", self.consultarCDT2)
 
     # Don't modify this code only routers
     def web_config(self):

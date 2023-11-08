@@ -146,6 +146,21 @@ def register_CDT(request: Request):
         }
     )
 
+def consultarCDT(request: Request):
+    return templates.TemplateResponse(
+        "consultarCDT.html",
+        context={
+            "request":request
+        }
+    )
+
+def consultarCDT2(request: Request):
+    return templates.TemplateResponse(
+        "consultarCDT2.html",
+        context={
+            "request":request
+        }
+    )
 
 # Emergente Crear CDT
 def emergenteRegisterCDT(request: Request):

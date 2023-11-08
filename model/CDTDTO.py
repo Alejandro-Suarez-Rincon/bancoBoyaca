@@ -30,6 +30,14 @@ class CDTDTO(CuentaDTO):
         else:
             print("No cuenta")
 
+    def consultarCDT(self):
+        CDT = CDTDAO.buscarCDT(self, self._numeroCuenta)
+        if(CDT == []):
+            return False
+        else:
+            return CDT
+
+
     def calcularSinGuardarCDT(self):
         pass
 
