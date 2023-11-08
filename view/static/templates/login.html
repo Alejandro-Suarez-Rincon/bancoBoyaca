@@ -9,8 +9,8 @@
         text-decoration: none;
         font-family: 'poppins', 'sans-serif';
     }
-    
-    
+
+
     header {
         width: 100%;
         position: absolute;
@@ -18,7 +18,7 @@
         left: 0;
         background: #f5f5f5;
     }
-    
+
     .header__superior {
         max-width: 1200px;
         margin: auto;
@@ -27,34 +27,34 @@
         justify-content: space-between;
         padding: 20px;
     }
-    
+
     .header-content img {
         width: 1400px;
-    
+
     }
-    
+
     .content {
         position: absolute;
         padding: 150px 150px 0px 0px;
     }
-    
+
     .content h1 {
-    
+
         color: wheat;
         font-size: 25px;
         font-weight: 500;
         line-height: 55px;
     }
-    
+
     .logo img {
         width: 100px;
     }
-    
+
     .search input {
         width: 300px;
         padding: 10px;
     }
-    
+
     /*barra menu*/
     .container__menu {
         width: 100%;
@@ -62,28 +62,28 @@
         background: #3BBAB3;
         padding: 0px 20px;
     }
-    
+
     .menu {
         max-width: 1200px;
         margin: auto;
         height: 100%;
     }
-    
+
     nav {
         height: 100%;
     }
-    
+
     nav>ul {
         height: 100%;
         display: flex;
     }
-    
+
     nav>ul>li {
         height: 100%;
         list-style: none;
         position: relative;
     }
-    
+
     nav>ul>li>a {
         width: 100%;
         height: 100%;
@@ -95,21 +95,21 @@
         font-size: 14px;
         transition: all 300ms ease;
     }
-    
+
     nav>ul>li>a:hover {
         transform: scale(1.1);
         background: #3BBAB3;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     }
-    
+
     #selected {
         transform: scale(1.1);
         background-color: #0074C7;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     }
-    
+
     /*SUBMENU*/
-    
+
     nav>ul>li>ul {
         width: 200px;
         display: flex;
@@ -125,13 +125,13 @@
         z-index: 10;
         transition: all 300ms ease;
     }
-    
+
     nav ul li:hover ul {
         visibility: visible;
         opacity: 1;
         top: 70px;
     }
-    
+
     nav ul li ul:before {
         content: '';
         width: 0;
@@ -143,7 +143,7 @@
         top: -12px;
         left: 20px;
     }
-    
+
     nav ul li ul li a {
         display: block;
         color: #0099E9;
@@ -154,7 +154,7 @@
         text-transform: uppercase;
         transition: all 300ms ease;
     }
-    
+
     nav ul li ul li a:hover {
         background: #0074C7;
         color: #fff;
@@ -163,9 +163,9 @@
         font-size: 14px;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     }
-    
+
     /*ELEMENTOS RESPONSIVOS*/
-    
+
     .icon__menu {
         font-size: 26px;
         color: white;
@@ -175,31 +175,31 @@
         display: none;
         align-items: center;
     }
-    
+
     #label__check {
         width: 26px;
         height: 100%;
         display: none;
     }
-    
+
     #check__menu {
         display: none;
     }
-    
+
     @media screen and (max-width: 720px) {
-    
+
         .search input {
             display: none;
         }
-    
+
         .header__superior {
             padding: 10px;
         }
-    
+
         .logo img {
             width: 200px;
         }
-    
+
         nav>ul {
             flex-direction: column;
             background-color: #023877;
@@ -213,41 +213,41 @@
             opacity: 0;
             visibility: hidden;
         }
-    
+
         nav>ul>li>a:hover {
             transform: scale(1);
         }
-    
+
         nav ul li ul {
             left: 90px;
         }
-    
+
         nav>ul>li:hover ul {
             top: 50px;
         }
-    
+
         nav>ul>li:first-child a {
             background-position: 20px;
         }
-    
+
         #selected {
             transform: scale(1);
         }
-    
+
         #label__check {
             display: block;
         }
-    
+
         .icon__menu {
             display: flex;
         }
-    
+
         #check__menu:checked~nav>ul {
             height: 300px;
             visibility: visible;
             opacity: 1;
         }
-    
+
         main {
             margin-top: 158px;
         }
@@ -261,24 +261,24 @@
         background: white;
         border-radius: 10px;
     }
-    
+
     .formulario h1 {
         text-align: center;
         padding: 0 0 20px 0;
         border-bottom: 1px solid silver;
     }
-    
+
     .formulario form {
         padding: 0 40px;
         box-sizing: border-box;
     }
-    
+
     .formulario .Username {
         position: relative;
         border-bottom: 2px solid #adadad;
         margin: 30px 0;
     }
-    
+
     .Username input {
         width: 100%;
         padding: 0 5px;
@@ -288,7 +288,7 @@
         background: none;
         outline: none;
     }
-    
+
     .Username label {
         position: absolute;
         top: 50%;
@@ -298,7 +298,7 @@
         font-size: 16px;
         pointer-events: none;
     }
-    
+
     .Username span::before{
         content: '';
         position: absolute;
@@ -368,7 +368,7 @@
     .registarse a:hover{
         text-decoration: underline;
     }
-    
+
     .submit {
       /* Estilos de fondo */
       background-color: #4CAF50; /* Color de fondo */
@@ -380,12 +380,12 @@
       display: inline-block; /* Mostrar como bloque en línea */
       font-size: 16px; /* Tamaño de fuente */
       cursor: pointer; /* Cursor al pasar por encima */
-    
+
       /* Otros estilos opcionales */
       border-radius: 4px; /* Bordes redondeados */
       transition-duration: 0.4s; /* Duración de la transición */
     }
-    
+
     /* Estilo cuando el cursor pasa por encima */
     .submit:hover {
       background-color: #45a049; /* Cambiar color de fondo */
@@ -397,9 +397,6 @@
         border: 1px solid #ccc; /* Borde para separar las columnas */
         padding: 20px; /* Espacio interno para el contenido */
     }
-    body{
-        background-image: url('static/imagenes/Principal1.png');
-        background-repeat: no repeat;}
            /* Estilo para centrar el formulario */
             .form-center {
                 display: flex;
@@ -408,13 +405,13 @@
                 justify-content: center;
                 height: 100vh; /* Centra verticalmente en la ventana */
             }
-    
+
             /* Estilo para los elementos del formulario */
             .div {
                 margin: 10px 0;
                 text-align: right;
             }
-    
+
             .input {
                 width: 100%;
                 padding: 5px;
