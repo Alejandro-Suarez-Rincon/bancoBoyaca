@@ -26,19 +26,21 @@ class UsuarioDTO:
         usuario = UsuarioDAO.consultarUsuario(self, self._cedula, self._contraseña)
 
         if (usuario == None):
-            ## no hay usuario
-            print("No se encuentra")
+            return None
         else:
             rolusuario = usuario[7]
             if (rolusuario == "usuario"):
                 ## ir a vista usuario
                 print("Usuario")
+                return "USUARIO"
             elif (rolusuario == "administrador"):
                 ## ir a Vista administrador
                 print("Administrador")
+                return "ADMINISTRADOR"
             else:
                 ## no se encuentra el rol
                 print("No se encuentra el rol")
+                return None
 
     def crearUsuario(self):
         contraseña = self.encriptarContraseña()

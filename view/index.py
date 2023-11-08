@@ -22,6 +22,15 @@ def loginView(request: Request):
     )
 
 
+def indexView(request: Request):
+    return templates.TemplateResponse(
+        "index.html",
+        context={
+            "request": request
+        }
+    )
+
+
 # Crear usuario
 def register_User(request: Request):
     return templates.TemplateResponse(

@@ -3,7 +3,10 @@ import os
 import uvicorn
 from fastapi import FastAPI, APIRouter, Request
 from fastapi.staticfiles import StaticFiles
-from view.index import (principalView, loginView, register_User, update_User, disable_User, emergenteRegisterUser,
+from starlette.responses import RedirectResponse
+
+from model.UsuarioDTO import UsuarioDTO
+from view.index import (principalView, loginView, indexView ,register_User, update_User, disable_User, emergenteRegisterUser,
                         register_Sucursal,
                         update_Sucursal, disable_Sucursal, register_CDT, emergenteRegisterCDT, register_Credito,
                         emergenteRegisterCredito, register_Corriente, emergenteRegisterCorriente, consult_Historial)
@@ -20,12 +23,51 @@ class Control:
     def principal(self, request: Request):
         return principalView(request)
 
-    def login(self, request: Request):
-        return loginView(request)
+    async def login(self, request: Request):
+
+        if (request.method == "POST"):
+            form_data = await request.form()
+            id = form_data.get("id")
+            contraseña = form_data.get("contraseña")
+
+            objeto = UsuarioDTO(id, None, None, None, None, None, contraseña,
+                                None, None, None, None, None)
+            usuario = objeto.autenticarUsuarios()
+
+            if(usuario == None):
+                return loginView(request)
+            elif(usuario == "USUARIO"):
+                return RedirectResponse("/index", status_code=303)
+            elif(usuario == "ADMINISTRADOR"):
+                ## debe tener una vista administrador diferente a la del usuario "index"
+                pass
+
+    async def registrarUsuario(self, request: Request):
+        ## Buscar ciudad
+
+        if (request.method == "POST"):
+            form_data = await request.form()
+            cedula = form_data.get("cedulaUsuario")
+            nombre = form_data.get("nombre")
+            apellido = form_data.get("apellidos")
+            direccion = form_data.get("direccion")
+            telefono = form_data.get("telefono")
+            correo = form_data.get("correo")
+            rol = "usuario"
+            fechaNacimiento = form_data.get("fechaNacimineto")
+            fechaExpedicion = form_data.get("fechaExpedicion")
+            estado = form_data.get("estado")
+            municipio = 15238
+
+    def index(self, request: Request):
+        global user
+        return indexView(request)
 
     def routers(self):
         self.router.add_api_route("/", self.principal)
         self.router.add_api_route("/login", self.login, methods=["GET", "POST"])
+        self.router.add_api_route("/index", self.index)
+        self.router.add_api_route("/registro", self.registrarUsuario, methods=["GET", "POST"])
 
     # Don't modify this code only routers
     def web_config(self):
