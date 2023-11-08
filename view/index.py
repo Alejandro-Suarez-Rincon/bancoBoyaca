@@ -1,12 +1,23 @@
 from fastapi import Request
 
-from view.templates import templates
+from view.static.templates import templates
+
 
 def principalView(request: Request):
     return templates.TemplateResponse(
         "index.html",
         context={
-            "request":request
+            "request": request
+        }
+    )
+
+
+# Login usuario
+def loginView(request: Request):
+    return templates.TemplateResponse(
+        "login.html",
+        context={
+            "request": request,
         }
     )
 
@@ -17,27 +28,28 @@ def register_User(request: Request):
         "registro.html",
         context={
             "request": request,
-            "cedula":cedulaUsuario,
+            "cedula": cedulaUsuario,
             "nombre": nombreUsuario,
-            "apellido":apeliidosUsuario,
-            "direccion":direccion,
-            "telefono":telefono,
-            "correo":correo,
-            "contraseña":contraseña,
+            "apellido": apeliidosUsuario,
+            "direccion": direccion,
+            "telefono": telefono,
+            "correo": correo,
+            "contraseña": contraseña,
             "rol": rol,
-            "fechaNacimiento":fechaNacimiento,
+            "fechaNacimiento": fechaNacimiento,
             "fechaExpedicion": fechaExpedicion,
-            "estado":estado,
-            "idMunicipio":municipio,
+            "estado": estado,
+            "idMunicipio": municipio,
         }
     )
 
-#Actualizar Usuario
-def update_User(request:Request):
+
+# Actualizar Usuario
+def update_User(request: Request):
     return templates.TemplateResponse(
         "actualizarUsuario.html",
         context={
-            "request":request,
+            "request": request,
             "cedula": cedula,
             "nombre": nombreUsuario,
             "apellido": apeliidosUsuario,
@@ -52,18 +64,21 @@ def update_User(request:Request):
             "idMunicipio": municipio,
         }
     )
-#Deshabilitar Usuario
+
+
+# Deshabilitar Usuario
 def disable_User(request: Request, listaUsuarios):
     return templates.TemplateResponse(
         "deshabilitarUsuario.html",
         context={
-            request:request,
+            request: request,
             "id_usuarios": listaUsuarios,
-            "estado":estado,
+            "estado": estado,
         }
     )
 
-#Emergente Crear Usuario
+
+# Emergente Crear Usuario
 def emergenteRegisterUser(request: Request):
     return templates.TemplateResponse(
         "emergenteCrearUsuario.html",
@@ -71,62 +86,70 @@ def emergenteRegisterUser(request: Request):
             "request": request
         }
     )
-#Crear Sucursal
+
+
+# Crear Sucursal
 def register_Sucursal(request: Request):
     return templates.TemplateResponse(
         "crearSucursal.html",
         context={
             "request": request,
             "idSucursal": idSucursal,
-            "nombreSucursal":nombreSucursal,
-            "direccion":direccion,
-            "telefono":telefono,
+            "nombreSucursal": nombreSucursal,
+            "direccion": direccion,
+            "telefono": telefono,
         }
     )
-#Actualizar Sucursal
+
+
+# Actualizar Sucursal
 def update_Sucursal(request: Request):
     return templates.TemplateResponse(
         "actualizarSucursal.html",
         context={
             "request": request,
             "idSucursal": idSucursal,
-            "nombreSucursal":nombreSucursal,
-            "direccion":direccion,
-            "telefono":telefono,
+            "nombreSucursal": nombreSucursal,
+            "direccion": direccion,
+            "telefono": telefono,
         }
     )
-#Deshabilitar Sucursal
+
+
+# Deshabilitar Sucursal
 def disable_Sucursal(request: Request, listaSucursal):
     return templates.TemplateResponse(
         "deshabilitarSucursal.html",
         context={
-            "request":request,
+            "request": request,
             "id_sucursal": listaSucursal,
-            "estado":estado,
+            "estado": estado,
         }
     )
 
-#Crear CDT
-def register_CDT(request:Request):
+
+# Crear CDT
+def register_CDT(request: Request):
     return templates.TemplateResponse(
         "crearCDT.html",
         context={
-            "response":response,
-            "numeroCuenta":numeroCDT,
-            "idSucursal":idSucursal,
+            "response": response,
+            "numeroCuenta": numeroCDT,
+            "idSucursal": idSucursal,
             "saldo": saldo,
-            "fechaApertura":fechaApertura,
-            "tasaInteres":tasaInteres,
-            "ultimoMovimiento":ultimoMovimiento,
-            "idUsuario":cedula,
-            "clausula":clausula,
-            "retencion":retencion,
-            "fechaFinalizacion":fechaFinalizacion,
-            "aproxInteres":interesAprox,
+            "fechaApertura": fechaApertura,
+            "tasaInteres": tasaInteres,
+            "ultimoMovimiento": ultimoMovimiento,
+            "idUsuario": cedula,
+            "clausula": clausula,
+            "retencion": retencion,
+            "fechaFinalizacion": fechaFinalizacion,
+            "aproxInteres": interesAprox,
         }
     )
 
-#Emergente Crear CDT
+
+# Emergente Crear CDT
 def emergenteRegisterCDT(request: Request):
     return templates.TemplateResponse(
         "emergenteCrearCDT.html",
@@ -134,23 +157,26 @@ def emergenteRegisterCDT(request: Request):
             "request": request
         }
     )
-#Crear Credito
-def register_Credito(request:Request):
+
+
+# Crear Credito
+def register_Credito(request: Request):
     return templates.TemplateResponse(
         "crearCredito.html",
         context={
-            "response":response,
-            "numeroCuenta":numeroCredito,
-            "idSucursal":idSucursal,
+            "response": response,
+            "numeroCuenta": numeroCredito,
+            "idSucursal": idSucursal,
             "saldo": saldo,
-            "fechaApertura":fechaApertura,
-            "tasaInteres":tasaInteres,
-            "ultimoMovimiento":ultimoMovimiento,
-            "idUsuario":cedula,
+            "fechaApertura": fechaApertura,
+            "tasaInteres": tasaInteres,
+            "ultimoMovimiento": ultimoMovimiento,
+            "idUsuario": cedula,
         }
     )
 
-#Emergente Crear Credito
+
+# Emergente Crear Credito
 def emergenteRegisterCredito(request: Request):
     return templates.TemplateResponse(
         "emergenteCrearCredito.html",
@@ -158,22 +184,26 @@ def emergenteRegisterCredito(request: Request):
             "request": request
         }
     )
-#Crear Corriente
-def register_Corriente(request:Request):
+
+
+# Crear Corriente
+def register_Corriente(request: Request):
     return templates.TemplateResponse(
         "crearCredito.html",
         context={
-            "response":response,
-            "numeroCuenta":numeroCuenta,
-            "idSucursal":idSucursal,
+            "response": response,
+            "numeroCuenta": numeroCuenta,
+            "idSucursal": idSucursal,
             "saldo": saldo,
-            "fechaApertura":fechaApertura,
-            "tasaInteres":tasaInteres,
-            "ultimoMovimiento":ultimoMovimiento,
-            "idUsuario":cedula,
+            "fechaApertura": fechaApertura,
+            "tasaInteres": tasaInteres,
+            "ultimoMovimiento": ultimoMovimiento,
+            "idUsuario": cedula,
         }
     )
-#Emergente Crear Cuenta Corriente
+
+
+# Emergente Crear Cuenta Corriente
 def emergenteRegisterCorriente(request: Request):
     return templates.TemplateResponse(
         "emergenteCrearCuenta.html",
@@ -181,17 +211,19 @@ def emergenteRegisterCorriente(request: Request):
             "request": request
         }
     )
-#Consultar Historial
+
+
+# Consultar Historial
 def consult_Historial(request: Request):
     return templates.TemplateResponse(
         "consultarHistorial.html",
         context={
             "response": response,
-            "numeroCuenta":numeroCuenta,
-            "saldo":saldo,
-            "movimiento":movimiento,
-            "fechaMovimiento":fechaMovimiento,
-            "descripcion":descripcion,
+            "numeroCuenta": numeroCuenta,
+            "saldo": saldo,
+            "movimiento": movimiento,
+            "fechaMovimiento": fechaMovimiento,
+            "descripcion": descripcion,
 
         }
     )

@@ -1,8 +1,12 @@
 import os
 
 import uvicorn
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, Request
 from fastapi.staticfiles import StaticFiles
+from view.index import (principalView, loginView, register_User, update_User, disable_User, emergenteRegisterUser,
+                        register_Sucursal,
+                        update_Sucursal, disable_Sucursal, register_CDT, emergenteRegisterCDT, register_Credito,
+                        emergenteRegisterCredito, register_Corriente, emergenteRegisterCorriente, consult_Historial)
 
 STATIC_PATH = os.path.abspath(os.path.join(os.getcwd(), "view/static"))
 print(STATIC_PATH)
@@ -13,8 +17,15 @@ class Control:
         self.app = FastAPI()
         self.router = APIRouter()
 
+    def principal(self, request: Request):
+        return principalView(request)
+
+    def login(self, request: Request):
+        return loginView(request)
+
     def routers(self):
-        pass
+        self.router.add_api_route("/", self.principal)
+        self.router.add_api_route("/login", self.login, methods=["GET", "POST"])
 
     # Don't modify this code only routers
     def web_config(self):
