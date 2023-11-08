@@ -51,9 +51,9 @@ class UsuarioDTO:
                                           self._fechaExpedicion, self._estado, self._idMunicipio)
 
         if (usuario == True):
-            print("Si")
+            return True
         else:
-            print("No")
+            return False
             # ir a usuario no se creo
 
     def deshavilitarUsuario(self):

@@ -6,7 +6,8 @@ from fastapi.staticfiles import StaticFiles
 from starlette.responses import RedirectResponse
 
 from model.UsuarioDTO import UsuarioDTO
-from view.index import (principalView, loginView, indexView ,register_User, update_User, disable_User, emergenteRegisterUser,
+from view.index import (principalView, loginView, indexView, register_User, update_User, disable_User,
+                        emergenteRegisterUser,
                         register_Sucursal,
                         update_Sucursal, disable_Sucursal, register_CDT, emergenteRegisterCDT, register_Credito,
                         emergenteRegisterCredito, register_Corriente, emergenteRegisterCorriente, consult_Historial)
@@ -23,6 +24,9 @@ class Control:
     def principal(self, request: Request):
         return principalView(request)
 
+    def index(self, request: Request):
+        return indexView(request)
+
     async def login(self, request: Request):
 
         if (request.method == "POST"):
@@ -34,34 +38,45 @@ class Control:
                                 None, None, None, None, None)
             usuario = objeto.autenticarUsuarios()
 
-            if(usuario == None):
+            if (usuario == None):
                 return loginView(request)
-            elif(usuario == "USUARIO"):
+            elif (usuario == "USUARIO"):
                 return RedirectResponse("/index", status_code=303)
-            elif(usuario == "ADMINISTRADOR"):
+            elif (usuario == "ADMINISTRADOR"):
                 ## debe tener una vista administrador diferente a la del usuario "index"
                 pass
+        return loginView(request)
 
     async def registrarUsuario(self, request: Request):
         ## Buscar ciudad
+        municipioEnviar = "Duitama"
 
         if (request.method == "POST"):
             form_data = await request.form()
-            cedula = form_data.get("cedulaUsuario")
+            cedula = form_data.get("cedula")
             nombre = form_data.get("nombre")
             apellido = form_data.get("apellidos")
             direccion = form_data.get("direccion")
             telefono = form_data.get("telefono")
             correo = form_data.get("correo")
             rol = "usuario"
+            contraseña = form_data.get("contrasena")
             fechaNacimiento = form_data.get("fechaNacimineto")
             fechaExpedicion = form_data.get("fechaExpedicion")
             estado = form_data.get("estado")
             municipio = 15238
 
-    def index(self, request: Request):
-        global user
-        return indexView(request)
+            usuario = UsuarioDTO(cedula, nombre, apellido, direccion, telefono, correo, contraseña, rol, municipio,
+                                 fechaNacimiento, fechaExpedicion, estado)
+            respuesta = usuario.crearUsuario()
+
+            if (respuesta):
+                return RedirectResponse("/login", status_code=303)
+            else:
+                return RedirectResponse("/", status_code=303)
+
+        return register_User(request, municipioEnviar)
+
 
     def routers(self):
         self.router.add_api_route("/", self.principal)

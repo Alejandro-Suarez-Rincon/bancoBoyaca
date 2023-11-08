@@ -32,23 +32,12 @@ def indexView(request: Request):
 
 
 # Crear usuario
-def register_User(request: Request):
+def register_User(request: Request, municipio):
     return templates.TemplateResponse(
         "registro.html",
         context={
             "request": request,
-            "cedula": cedulaUsuario,
-            "nombre": nombreUsuario,
-            "apellido": apeliidosUsuario,
-            "direccion": direccion,
-            "telefono": telefono,
-            "correo": correo,
-            "contraseña": contraseña,
-            "rol": rol,
-            "fechaNacimiento": fechaNacimiento,
-            "fechaExpedicion": fechaExpedicion,
-            "estado": estado,
-            "idMunicipio": municipio,
+            "idMunicipio": municipio
         }
     )
 
