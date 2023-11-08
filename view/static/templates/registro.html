@@ -552,8 +552,12 @@
 
         <!--Municipio-->
         <div class=div>
-            <label>Municipio: </label> <input class=input id="municipio"
-                                              type="text" name="municipio" placeholder="municipio">
+            <label for="idMunicipio">Municipio</label>
+        <select name="idMunicipio" id="departamento" class="Username">
+            {% for idMunicipio in idMunicipio %}
+            <option value="{{ loop.index }}">{{ idMunicipio }}</option>
+            {% endfor %}
+        </select>
         </div>
 
         <a href="emergenteCrearUsario.html"><input class="submit" type="submit" value="Crear">
