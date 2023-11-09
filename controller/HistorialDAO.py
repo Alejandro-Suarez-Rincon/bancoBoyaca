@@ -10,8 +10,9 @@ class HistorialDAO:
             conexion = Conexion()
             cdb = conexion.conectarBD()
             cursor = cdb.cursor()
-            cursor.execute(f"INSERT INTO historial (id_numero_cuenta, saldo, movimiento, fecha_movimeinto, descripcion)"
-                       f" VALUES (\"{numeroCuenta}\", \"{saldo}\", \"{movimiento}\", \"{fechaMovimiento}\", \"{descripcion}\")")
+            cursor.execute(
+                f"INSERT INTO historial_cuenta (id_numero_cuenta, saldo, movimiento, fecha_movimeinto, descripcion)"
+                f" VALUES (\"{numeroCuenta}\", \"{saldo}\", \"{movimiento}\", \"{fechaMovimiento}\", \"{descripcion}\")")
             cdb.commit()
             return True
         except Exception as e:
@@ -21,8 +22,9 @@ class HistorialDAO:
         conexion = Conexion()
         cdb = conexion.conectarBD()
         cursor = cdb.cursor()
-        cursor.execute(f"SELECT id_numero_cuenta, saldo, movimiento, fecha_movimiento, descripcion FROM historial"
-                       f" WHERE id_numero_cuenta = \"{numeroCuenta}\"")
+        cursor.execute(
+            f"SELECT id_numero_cuenta, saldo, movimiento, fecha_movimiento, descripcion FROM historial_cuenta"
+            f" WHERE id_numero_cuenta = \"{numeroCuenta}\"")
         buscar = cursor.fetchall()
         return buscar
 
@@ -30,7 +32,7 @@ class HistorialDAO:
         conexion = Conexion()
         cdb = conexion.conectarBD()
         cursor = cdb.cursor()
-        cursor.execute(f"SELECT id_numero_cuenta FROM historial WHERE id_numero_cuenta = \"{numeroCuenta}\"")
+        cursor.execute(f"SELECT id_numero_cuenta FROM historial_cuenta WHERE id_numero_cuenta = \"{numeroCuenta}\"")
         buscar = cursor.fetchone()
 
         if (buscar == numeroCuenta):

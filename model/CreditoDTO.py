@@ -35,7 +35,7 @@ class CreditoDTO(CuentaDTO):
         cuenta = CuentaDAO.consultarCuenta(self, self._numeroCuenta)
         if (cuenta == None):
             # No se encuentra la ceunta
-            print("No")
+            return False
         else:
             # Imprimir datos
-            print(cuenta)
+            return cuenta

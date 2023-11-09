@@ -11,6 +11,7 @@ def principalView(request: Request):
         }
     )
 
+
 def principalViewUser(request: Request):
     return templates.TemplateResponse(
         "indexUsuario.html",
@@ -19,6 +20,7 @@ def principalViewUser(request: Request):
         }
     )
 
+
 def principalViewAdmin(request: Request):
     return templates.TemplateResponse(
         "indexAdmin.html",
@@ -26,6 +28,8 @@ def principalViewAdmin(request: Request):
             "request": request
         }
     )
+
+
 # Login usuario
 def loginView(request: Request):
     return templates.TemplateResponse(
@@ -145,6 +149,7 @@ def register_CDT(request: Request):
     return templates.TemplateResponse(
         "crearCDT.html",
         context={
+            "request": request,
             "response": response,
             "numeroCuenta": numeroCDT,
             "idSucursal": idSucursal,
@@ -160,21 +165,24 @@ def register_CDT(request: Request):
         }
     )
 
+
 def consultarCDT(request: Request):
     return templates.TemplateResponse(
         "consultarCDT.html",
         context={
-            "request":request
+            "request": request
         }
     )
+
 
 def consultarCDT2(request: Request):
     return templates.TemplateResponse(
         "consultarCDT2.html",
         context={
-            "request":request
+            "request": request
         }
     )
+
 
 # Emergente Crear CDT
 def emergenteRegisterCDT(request: Request):
@@ -191,6 +199,7 @@ def register_Credito(request: Request):
     return templates.TemplateResponse(
         "crearCredito.html",
         context={
+            "request": request,
             "response": response,
             "numeroCuenta": numeroCredito,
             "idSucursal": idSucursal,
@@ -212,11 +221,13 @@ def emergenteRegisterCredito(request: Request):
         }
     )
 
+
 # Crear Corriente
 def register_Cuenta(request: Request):
     return templates.TemplateResponse(
         "crearCuenta.html",
         context={
+            "request": request,
             "response": response,
             "numeroCuenta": numeroCuenta,
             "idSucursal": idSucursal,
@@ -228,6 +239,7 @@ def register_Cuenta(request: Request):
         }
     )
 
+
 # Emergente Crear Cuenta Corriente
 def emergenteRegisterCorriente(request: Request):
     return templates.TemplateResponse(
@@ -237,73 +249,88 @@ def emergenteRegisterCorriente(request: Request):
         }
     )
 
+
 # Consultar Historial
-def consult_Historial(request: Request):
+def consult_Historial(request: Request, numeroCuenta, saldo, movimiento, fechaMovimiento, descripcion):
     return templates.TemplateResponse(
         "consultarHistorial.html",
         context={
-            "response": response,
+            "request": request,
             "numeroCuenta": numeroCuenta,
             "saldo": saldo,
             "movimiento": movimiento,
             "fechaMovimiento": fechaMovimiento,
-            "descripcion": descripcion,
+            "descripcion": descripcion
 
         }
     )
-#Actualizar sucursal 2
+
+
+# Actualizar sucursal 2
 def updateSucursal2(request: Request):
     return templates.TemplateResponse(
         "actualizarSucursal2.html",
         context={
-            "response": response,
+            "request": request
         }
     )
-#Consultar credito 2
+
+
+# Consultar credito 2
 def consultCredito2(request: Request):
     return templates.TemplateResponse(
         "consultarCredito2.html",
         context={
-            "response": response,
+            "request": request
         }
     )
-#Consultar cuenta
-def consultCuenta2(request: Request):
+
+
+# Consultar cuenta
+def consultCuenta(request: Request):
     return templates.TemplateResponse(
-        "consultarCuenta2.html",
+        "consultarCuenta.html",
         context={
-            "response": response,
+            "request": request
         }
     )
-#Consultar cuentas 2
+
+
+# Consultar cuentas 2
 def consultCuenta2(request: Request):
     return templates.TemplateResponse(
         "consultarCredito2.html",
         context={
-            "response": response,
+            "request": request
         }
     )
-#Consultar historial2
+
+
+# Consultar historial2
 def consultHistorial2(request: Request):
     return templates.TemplateResponse(
         "consultarHistorial2.html",
         context={
-            "response": response,
+            "request": request
         }
     )
-#contactanos
+
+
+# contactanos
 def contactanos(request: Request):
     return templates.TemplateResponse(
         "contactanos.html",
         context={
-            "response": response,
+            "request": request
         }
     )
-#Información Bancaria
+
+
+# Información Bancaria
 def information(request: Request):
     return templates.TemplateResponse(
         "informacionBancaria.html",
         context={
-            "response": response,
+            "request": request
         }
     )

@@ -11,10 +11,10 @@ class HistorialDTO:
 
     def crearHistorial(self):
         fechaActual = datetime.datetime.now()
-        historial = HistorialDAO.crearHistorial(self._numeroCuenta, self._saldo, self._movimiento, self._movimiento,
+        historial = HistorialDAO.crearHistorial(self, self._numeroCuenta, self._saldo, self._movimiento, self._movimiento,
                                                 fechaActual, self._descripcion)
         return historial
 
     def consultarHistorial(self):
-        hisotrial = HistorialDAO.crearHistorial(self._numeroCuenta)
+        hisotrial = HistorialDAO.consultarHistorial(self, self._numeroCuenta)
         return hisotrial
