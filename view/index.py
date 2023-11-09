@@ -11,6 +11,14 @@ def principalView(request: Request):
         }
     )
 
+def principalViewUser(request: Request):
+    return templates.TemplateResponse(
+        "indexUsuario.html",
+        context={
+            "request": request
+        }
+    )
+
 
 def principalViewUser(request: Request):
     return templates.TemplateResponse(
@@ -21,6 +29,7 @@ def principalViewUser(request: Request):
     )
 
 
+
 def principalViewAdmin(request: Request):
     return templates.TemplateResponse(
         "indexAdmin.html",
@@ -28,7 +37,6 @@ def principalViewAdmin(request: Request):
             "request": request
         }
     )
-
 
 # Login usuario
 def loginView(request: Request):
@@ -239,7 +247,6 @@ def register_Cuenta(request: Request):
         }
     )
 
-
 # Emergente Crear Cuenta Corriente
 def emergenteRegisterCorriente(request: Request):
     return templates.TemplateResponse(
@@ -265,8 +272,8 @@ def consult_Historial(request: Request, numeroCuenta, saldo, movimiento, fechaMo
         }
     )
 
-
 # Actualizar sucursal 2
+
 def updateSucursal2(request: Request):
     return templates.TemplateResponse(
         "actualizarSucursal2.html",
@@ -277,6 +284,7 @@ def updateSucursal2(request: Request):
 
 
 # Consultar credito 2
+
 def consultCredito2(request: Request):
     return templates.TemplateResponse(
         "consultarCredito2.html",
@@ -296,17 +304,28 @@ def consultCuenta(request: Request):
     )
 
 
-# Consultar cuentas 2
+# Consultar cuentas
+
+def consultCuenta(request: Request):
+    return templates.TemplateResponse(
+        "consultarCuenta.html",
+        context={
+            "response": response,
+        }
+    )
+#Consultar cuentas 2
 def consultCuenta2(request: Request):
     return templates.TemplateResponse(
-        "consultarCredito2.html",
+        "consultarCuenta2.html",
         context={
+
             "request": request
         }
     )
 
 
 # Consultar historial2
+
 def consultHistorial2(request: Request):
     return templates.TemplateResponse(
         "consultarHistorial2.html",
@@ -321,16 +340,20 @@ def contactanos(request: Request):
     return templates.TemplateResponse(
         "contactanos.html",
         context={
+
             "request": request
         }
     )
 
 
 # Información Bancaria
+
 def information(request: Request):
     return templates.TemplateResponse(
         "informacionBancaria.html",
         context={
+
             "request": request
         }
     )
+
