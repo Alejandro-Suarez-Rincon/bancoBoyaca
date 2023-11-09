@@ -141,7 +141,12 @@ class Control:
 
         return consult_Historial(request, id, saldo, movimiento, fechaMovimeinto, descripcion)
 
+    def informacionBancaria(self, request:Request):
+        return information(request)
 
+
+    def contactanos(self, request:Request):
+        return contactanos(request)
 
     def routers(self):
         self.router.add_api_route("/", self.principal)
@@ -154,6 +159,8 @@ class Control:
         self.router.add_api_route("/consultarCuenta", self.consultarCuenta, methods=["GET", "POST"])
         self.router.add_api_route("/consultarCuenta2", self.consultarCuenta2, methods=["GET", "POST"])
         self.router.add_api_route("/consultarHistorial", self.consultarHistorial , methods=["GET", "POST"])
+        self.router.add_api_route("/informacionBancaria", self.informacionBancaria, methods=["GET", "POST"])
+        self.router.add_api_route("/contactanos", self.contactanos, methods=["GET", "POST"])
 
 
 
