@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <style>
     * {
         margin: 0;
@@ -398,14 +397,13 @@
         padding: 20px; /* Espacio interno para el contenido */
     }
            /* Estilo para centrar el formulario */
-           .form-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin-top: 50px;
-}
+            .form-center {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh; /* Centra verticalmente en la ventana */
+            }
 
             /* Estilo para los elementos del formulario */
             .div {
@@ -419,95 +417,59 @@
             }
 </style>
 <body>
-
-    <header>
-        <div class="header__superior">
-            <div class="logo">
-                <img src="static/imagenes/boyacense.png" alt="">
-            </div>
+<header>
+    <div class="header__superior">
+        <div class="logo">
+            <img src="static/imagenes/boyacense.png" alt="">
         </div>
-        <div class="container__menu">
-            <!-- los # van los link de los botones -->
-            <div class="menu">
-                <nav>
-                    <ul>
-                        <li><a href="/index">Inicio</a></li>
-    
-                        <li><a href="#">Cuentas</a>
-                            <ul>
-                                <li><a href="/crearCDT">Cuentas CDT</a></li>
-                                <li><a href="/crearCredito">Cuentas de Crédito</a></li>
-                                <li><a href="/crearCuenta">Cuenta Corriente</a></li>
-                                <li><a href="/consultarCDT">Consultar CDT</a></li>
-                                <li><a href="/consultarCredito">Consultar Crédito</a></li>
-                                <li><a href="/consultarCuenta">Consultar Cuenta</a></li>
-                                <li><a href="/consultarHistorial">Consultar Historial</a></li>
-    
-                            </ul>
-                        </li>
-    
-                        <li><a href="#">Sucursales</a>
-                        </li>
-    
-                        <li><a href="#">Información</a>
-                            
-                        </li>
-                        <li><a href="/contactanos">Contactanos</a>
-                        </li>
-                        <li><a href="#">Ingresar</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+    </div>
+    <div class="container__menu">
+        <!-- los # van los link de los botones -->
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="/index">Inicio</a></li>
+
+                    <li><a href="#">Cuentas</a>
+                        <ul>
+                            <li><a href="/consultarCDT">Consultar CDT</a></li>
+                            <li><a href="/consultarCredito">Consultar Crédito</a></li>
+                            <li><a href="/consultarCuenta">Consultar Cuenta</a></li>
+                            <li><a href="/consultarHistorial">Consultar Historial</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Sucursales</a>
+                    </li>
+
+                    <li><a href="#">Información</a>
+                        <ul>
+                            <li><a href="/informacionBancaria">Información Bancaria</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/contactanos">Contactanos</a>
+                    </li>
+                    <li><a href="#>Ingresar"></a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </header>   
+    </div>
+</header>
 
-  
-
-    <div class="form-center">
-        <form>
-
-    <div class=div>
-        <!-- Nùmero de Cuenta -->
-            <label>Número de Cuenta: </label> <input class=input id="numeroCuenta"
-            name="numeroCuenta" type="number" autofocus
-            placeholder="">
-    </div>
-
-    <div class=div>
-        <!-- Saldo -->
-            <label>Saldo: </label> <input class=input id="saldoCuenta"
-            name="saldoCuenta" type="number" autofocus
-            placeholder="Ingrese el valor del saldo">
-    </div>
-    <div class=div>
-        <!-- Fecha Apertura -->
-       <label>Fecha de Apertura: </label> <input class=input id="fechaApertura"
-       name="fechaApertura" type="date" autofocus
-       placeholder="dd/mm/aa">
-   </div> 
-   <div class=div>
-    <!-- Tasa de interes -->
-        <label>Tasa de interes: </label> <input class=input id="tasaInteres"
-        name="tasaInteres" type="number" autofocus
-        placeholder="Ingrese la tasa de interes">
-    </div>
-    <!-- Ultimo movimiento -->
-    <div class="div">
-        <label>Último movimiento:</label>
-        <input class="input" id="ultimoMovimeinto" name="ultimoMovimeinto" type="text" autofocus placeholder="Ingrese el movimiento">
-    </div>
-    <!-- Identificador -->
-    <div class="div">
-        <label>Número de Sucursal: </label>
-        <input class="input" id="idSucursal" name="idSucursal" type="number" autofocus placeholder="Ingrese la Sucursal">
-    </div>
-    <!-- Usuario -->
-    <div class="div">
-        <label>Usuario:</label>
-        <input class="input" id="cedula" name="cedula" type="number" autofocus placeholder="Ingrese la cédula">
-    </div>
-    <a href="crearCuenta.html"><input class="submit" type="submit" value="Crear Cuenta">
-        </form>
-    </div>
 </body>
+<div class="formulario">
+    <h1>¿Qué sucursal deseas deshabilitar?</h1>
+    <form method="set">
+        <div class="Username">
+            <input type="text" required>
+            <label>Número de Sucursal</label>
+        </div>
+
+        <a href="indexAdmin.html"> <input type="button" value="Consultar"></a>
+
+    </form>
+</div>
+
+</html>

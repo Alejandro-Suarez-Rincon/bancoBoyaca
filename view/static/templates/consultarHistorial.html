@@ -461,38 +461,17 @@
         </div>
     </header>   
     
-    <div class="formulario">
-        <h1>Consultar Cuenta</h1>
-        <form method="post">
-            <div class="Username">
-                <p>Número de cuenta: {{ n }} </p>
-            </div>
-            <div class="Username">
-                <p>Saldo: {{ saldo }} </p>
-            </div>
-            <div class="Username">
-                <p>Fecha de Apertura: {{ fechaApertura }} </p>
-            </div>
-            <div class="Username">
-                <p>Tasa de Ineteres: {{ tasaInteres }} </p>
-            </div>
-            <div class="Username">
-                <p>Último Movimiento: {{ ultimoMovimeinto }} </p>
-            </div>
-    
-            <div class="Username">
-                <p>Número de Sucursal: {{ idSucursal }} </p>
-            </div>
-           
-            <div class="Username">
-                <p>Usuario: {{ cedula }} </p>
-            </div>
-           
-    
-            <a href="/index"> <input  type="button" value="Aceptar"></a>
-    
-        </form>
-    </div>
-    
     </html>
 </body>
+<div class="formulario">
+    <h1>Digita el numero de cuenta deseas consultar el historial</h1>
+    <form method="set">
+        <div class="Username">
+            <input type="text" required>
+            <label>Número de cuenta:</label>
+        </div>
+
+        <a href="consultarHistorial2.html"> <input type="button" value="Consultar"></a>
+
+    </form>
+</div>
